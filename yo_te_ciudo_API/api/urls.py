@@ -10,7 +10,7 @@ urlpatterns = {
 
     url(r'^dangers/$', Dangers_Create_View.as_view(), name="create"),
 
-    url(r'^update_danger/(?P<danger_id>[\w\ ]+)/$', Dangers_Update_View.as_view(), name="update"),
+    url(r'^update_danger/(?P<danger_id>[\w\ ]+)/(?P<new_danger_state>[\w\ ]+)/$', Dangers_Update_View.as_view(), name="update"),
 
     url(r'^danger_details/(?P<danger_id>[\w\ ]+)/$', Danger_Details_View.as_view(), name="danger_details"),
     

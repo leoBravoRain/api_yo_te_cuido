@@ -28,18 +28,21 @@ class Dangers_Update_View(generics.ListCreateAPIView):
     # Filtering query set
     def get_queryset(self):
 
-        print "query_set method"
-
         # get location_id
         danger_id = self.kwargs['danger_id']
+
+        # Get new state
+        new_danger_state = self.kwargs["new_danger_state"]
 
         # Filter by location id
         danger = Dangers.objects.filter(id__exact = danger_id)
 
+        # Get danger form array
         danger0 = danger[0]
 
         # Fix. Add state state = not state. This is not working because query_set method call twice time. I dont know why.
-        danger0.state = False
+        # danger0.state = False
+        danger0.state = new_danger_state
 
         # Save danger
         danger0.save()
