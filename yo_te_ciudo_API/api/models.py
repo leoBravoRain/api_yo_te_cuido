@@ -17,11 +17,13 @@ class Dangers(models.Model):
 
     comment = models.CharField(max_length = 2000)
 
-    state = models.CharField(max_length = 2000, choices = danger_states)
+    state = models.CharField(max_length = 2000, choices = danger_states, )
 
     date = models.DateTimeField(default=django.utils.timezone.now)
 
     photo = models.ImageField(upload_to= 'imagenes/dangers')
+
+    floor_number = models.CharField(max_length = 2000)
 
     # # Metodo para obtener nombre de objeto
     # def __unicode__(self):
