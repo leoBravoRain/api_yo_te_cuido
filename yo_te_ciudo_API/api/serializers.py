@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Dangers, Comment_To_Danger
+from .models import Dangers, Comment_To_Danger, Area_Of_Company
 
 
 # Serializer of dangers
@@ -18,4 +18,12 @@ class Comment_To_Danger_Serializer(serializers.ModelSerializer):
 	class Meta:
 
 		model = Comment_To_Danger
+		fields = '__all__'
+
+
+class Area_Of_Company(serializers.ModelSerializer):
+
+	class Meta:
+
+		model = Area_Of_Company
 		fields = '__all__'
