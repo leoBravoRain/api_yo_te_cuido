@@ -21,7 +21,7 @@ class Comment_To_Danger_Serializer(serializers.ModelSerializer):
 		fields = '__all__'
 
 
-class Area_Of_Company(serializers.ModelSerializer):
+class Area_Of_Company_Serializer(serializers.ModelSerializer):
 
 	class Meta:
 
