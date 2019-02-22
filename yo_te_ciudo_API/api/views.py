@@ -2,8 +2,18 @@
 from __future__ import unicode_literals
 
 from rest_framework import generics
-from .serializers import DangersSerializers, Comment_To_Danger_Serializer, Area_Of_Company_Serializer
-from .models import Dangers, Comment_To_Danger, Area_Of_Company
+from .serializers import DangersSerializers, Comment_To_Danger_Serializer, Area_Of_Company_Serializer, Suggestions_From_User_Serializer
+from .models import Dangers, Comment_To_Danger, Area_Of_Company, Suggestions_From_User
+
+# Generic view for get/post Suggestions_From_User
+class Suggestions_From_User_View(generics.ListCreateAPIView):
+
+    queryset = Suggestions_From_User.objects.all()
+    serializer_class = Suggestions_From_User_Serializer
+
+    def perform_create(self, serializer):
+        """Save the post data when creating a new bucketlist."""
+        serializer.save()
 
 # generic view for get/post Dangers objects
 class Dangers_Create_View(generics.ListCreateAPIView):

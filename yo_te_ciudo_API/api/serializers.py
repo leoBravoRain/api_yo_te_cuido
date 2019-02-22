@@ -1,7 +1,16 @@
 from rest_framework import serializers
-from .models import Dangers, Comment_To_Danger, Area_Of_Company
+from .models import Dangers, Comment_To_Danger, Area_Of_Company, Suggestions_From_User
 
 
+# Serializer of Suggestions_From_User
+class Suggestions_From_User_Serializer(serializers.ModelSerializer):
+
+	class Meta:
+
+		model = Suggestions_From_User
+		fields = '__all__'
+
+		
 # Serializer of dangers
 class DangersSerializers(serializers.ModelSerializer):
 

@@ -56,3 +56,8 @@ class Comment_To_Danger(models.Model):
     photo = models.ImageField(upload_to= 'imagenes/comments')
     comment = models.CharField(max_length = 2000)
 
+# Suggestions from user
+class Suggestions_From_User(models.Model):
+
+    suggestion = models.CharField(max_length = 2000)
+    photo = models.ImageField(upload_to= 'imagenes/suggestions', blank = True)
